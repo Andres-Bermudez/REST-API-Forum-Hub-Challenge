@@ -18,6 +18,9 @@ PostgreSQL database and is part of the specialization in
 backend with Java and Spring Framework of the ONE - Oracle
 Next Education program.
 
+- ERD Database:
+![ERD database](images/ForoHubERD.png)
+
 ## Project Monitoring:
 1. Create Spring Boot project.
 2. Create packages.
@@ -25,3 +28,6 @@ Next Education program.
 4. Configure aplication.properties profiles.
 5. Test the configuration with a controller.
 6. Create GitHub repository.
+7. Create database.
+8. Create flyway migration.
+9. Make ERD diagram.
