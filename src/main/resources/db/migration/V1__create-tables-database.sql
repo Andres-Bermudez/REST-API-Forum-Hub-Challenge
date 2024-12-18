@@ -14,11 +14,11 @@ CREATE TABLE courses (
 
 CREATE TABLE topics (
     id_topic SERIAL PRIMARY KEY,
-    title VARCHAR(100) NOT NULL,
+    title VARCHAR(100) NOT NULL UNIQUE,
     course_id INT REFERENCES courses(id_course) ON DELETE CASCADE,
     user_id INT REFERENCES users(id_user) ON DELETE CASCADE,
-    message TEXT NOT NULL,
-    creation_date TIMESTAMP NOT NULL
+    message TEXT NOT NULL UNIQUE,
+    created_date TIMESTAMP NOT NULL
 );
 
 CREATE TABLE answers (
@@ -26,7 +26,7 @@ CREATE TABLE answers (
     user_id INT REFERENCES users(id_user) ON DELETE CASCADE,
     topic_id INT REFERENCES topics(id_topic) ON DELETE CASCADE,
     message TEXT NOT NULL,
-    creation_date TIMESTAMP NOT NULL
+    created_date TIMESTAMP NOT NULL
 );
 
 

@@ -31,3 +31,5 @@ Next Education program.
 7. Create database.
 8. Create flyway migration.
 9. Make ERD diagram.
+10. Create the new endpoint to create a topic.
+11. Add bussines rules.
