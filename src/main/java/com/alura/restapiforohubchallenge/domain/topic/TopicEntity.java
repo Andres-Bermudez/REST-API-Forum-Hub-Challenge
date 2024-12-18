@@ -1,11 +1,8 @@
 package com.alura.restapiforohubchallenge.domain.topic;
 
-import lombok.Getter;
+import lombok.*;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 import com.alura.restapiforohubchallenge.domain.user.UserEntity;
 import com.alura.restapiforohubchallenge.domain.course.CourseEntity;
 
@@ -13,26 +10,33 @@ import com.alura.restapiforohubchallenge.domain.course.CourseEntity;
 @Table(name = "topics")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
+@Data
 @EqualsAndHashCode
 public class TopicEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id_topic")
+    private Long idTopic;
 
     private String title;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_course")
+    @JoinColumn(name = "course_id")
     private CourseEntity courseEntity;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_user")
+    @JoinColumn(name = "user_id")
     private UserEntity userEntity;
 
     private String message;
 
     @Column(name = "created_date")
     private LocalDateTime createdDate;
+
+    @Column(name = "last_edited_at")
+    private LocalDateTime lastEditedAt;
+
+    @Column(name = "active_status")
+    private Boolean activeStatus;
 }

@@ -1,9 +1,8 @@
 package com.alura.restapiforohubchallenge.domain.topic;
 
-public record TopicReceivedDTO(
+public record ShowInTopicListDTO(
+        Long idTopic,
         String title,
-        Long idCourse,
-        Long idUser,
         String message
 ) {
 }

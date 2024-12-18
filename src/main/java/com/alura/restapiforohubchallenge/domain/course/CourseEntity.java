@@ -16,8 +16,11 @@ public class CourseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id_course")
+    private Long idCourse;
 
     private String name;
+
+    @Enumerated(EnumType.STRING)
     private CourseCategory category;
 }

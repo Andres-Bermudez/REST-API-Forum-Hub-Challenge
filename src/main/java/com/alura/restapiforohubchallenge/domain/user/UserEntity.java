@@ -14,7 +14,8 @@ public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id_user")
+    private Long idUser;
 
     @Column(name = "user_name")
     private String userName;
@@ -25,12 +26,12 @@ public class UserEntity {
     @Column(name = "active_status")
     private Boolean activeStatus;
 
-    public UserEntity(Long id,
+    public UserEntity(Long idUser,
                       String userName,
                       String email,
                       String password
     ) {
-        this.id = id;
+        this.idUser = idUser;
         this.userName = userName;
         this.email = email;
         this.password = password;

@@ -15,16 +15,7 @@ public class ValidateTitleAndMessage implements TopicValidator {
 
     @Override
     public void validate(TopicReceivedDTO topicReceivedDTO) {
-        // 1ra regla de negocio: Ni el titulo ni el mensaje puede ser null.
-        if (topicReceivedDTO.title() == null) {
-            throw new ValidationException("The field 'title' is null.");
-        }
-
-        if (topicReceivedDTO.message() == null) {
-            throw new ValidationException("The field 'message' is null.");
-        }
-
-        // 2da regla de negocio: No puede haber un topico con el titulo o el mensaje repetido.
+        // Regla de negocio: No puede haber un topico con el titulo o el mensaje repetido.
         Boolean titleExist = topicRepository.existsByTitle(topicReceivedDTO.title());
         Boolean messageExist = topicRepository.existsByMessage(topicReceivedDTO.message());
 

@@ -33,3 +33,6 @@ Next Education program.
 9. Make ERD diagram.
 10. Create the new endpoint to create a topic.
 11. Add bussines rules.
+12. Add validations and exceptions.
+13. Create the new endpoint to update a topic.
+14. Create the new endpoint to show topics.
