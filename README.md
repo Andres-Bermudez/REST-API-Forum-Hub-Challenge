@@ -19,7 +19,7 @@ backend with Java and Spring Framework of the ONE - Oracle
 Next Education program.
 
 - ERD Database:
-![ERD database](images/ForoHubERD.png)
+![ERD database](images/ForoHubDbERD.png)
 
 ## Project Monitoring:
 1. Create Spring Boot project.
@@ -36,3 +36,4 @@ Next Education program.
 12. Add validations and exceptions.
 13. Create the new endpoint to update a topic.
 14. Create the new endpoint to show topics.
+15. Add global handling exceptions.

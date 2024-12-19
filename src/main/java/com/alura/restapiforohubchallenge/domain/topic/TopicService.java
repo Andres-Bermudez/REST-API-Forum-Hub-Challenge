@@ -1,7 +1,9 @@
 package com.alura.restapiforohubchallenge.domain.topic;
 
+import java.util.Map;
 import java.util.List;
 import java.time.LocalDateTime;
+import java.util.function.Supplier;
 import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
@@ -32,28 +34,19 @@ public class TopicService {
     // Para crear un nuevo topico en la base de datos.
     public TopicEntity createNewTopic(TopicReceivedDTO topicReceivedDTO) {
 
-        /*
-         * PENDIENTE AGREGAR ESTA REGLA DE NEGOCIO A LOS VALIDADORES.
-         *
-         * OJO. ESTE PUNTO ESTA PENDIENTE POR MEJORAR.
-        */
+        // Para validar que ningun campo del DTO recibido sea null.
+        Map<Supplier<Object>, String> validations = Map.of(
+                topicReceivedDTO::title, "The field 'title' is null.",
+                topicReceivedDTO::idCourse, "The field 'idCourse' is null.",
+                topicReceivedDTO::idUser, "The field 'idUser' is null.",
+                topicReceivedDTO::message, "The field 'message' is null."
+        );
 
-        // Regla de negocio: Ni el titulo ni el mensaje puede ser null.
-        if (topicReceivedDTO.title() == null) {
-            throw new ValidationException("The field 'title' is null.");
-        }
-
-        if (topicReceivedDTO.idCourse() == null) {
-            throw new ValidationException("The field 'idCourse' is null.");
-        }
-
-        if (topicReceivedDTO.idUser() == null) {
-            throw new ValidationException("The field 'idUser' is null.");
-        }
-
-        if (topicReceivedDTO.message() == null) {
-            throw new ValidationException("The field 'message' is null.");
-        }
+        validations.forEach((supplier, errorMessage) -> {
+            if (supplier.get() == null) {
+                throw new ValidationException(errorMessage);
+            }
+        });
 
         // Para validar las reglas de negocio.
         validators.forEach(v -> v.validate(topicReceivedDTO));
@@ -100,9 +93,10 @@ public class TopicService {
                 ));
     }
 
+    // Para actualizar un topico.
     @Transactional
     public TopicDetailsDTO updateTopic(Long idTopic, TopicReceivedDTO topicReceivedDTO) {
-        // Para validar que el topico que se quiere actualizar este activo.
+        // Para validar que el topico que se quiere actualizar si existe.
         if (!topicRepository.existsById(idTopic)) {
             throw new ValidationException("This topic does not exist.");
         }
