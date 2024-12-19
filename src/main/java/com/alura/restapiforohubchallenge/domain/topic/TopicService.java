@@ -155,4 +155,15 @@ public class TopicService {
 
         topicEntity.setLastEditedAt(LocalDateTime.now());
     }
+
+    // Para desactivar un topico. Eliminacion logica.
+    @Transactional
+    public void deleteTopic(Long idTopic) {
+        if (!topicRepository.existsById(idTopic)) {
+            throw new ValidationException("This topic does not exists.");
+        }
+        // Para modificar la columna active_status del topico que se quiere "eliminar".
+        // Realizamos una eliminacion logica, para almacenar el registro para control de datos.
+        topicRepository.getReferenceById(idTopic).setActiveStatus(false);
+    }
 }

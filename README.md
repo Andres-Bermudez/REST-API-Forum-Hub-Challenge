@@ -18,6 +18,18 @@ PostgreSQL database and is part of the specialization in
 backend with Java and Spring Framework of the ONE - Oracle
 Next Education program.
 
+The API offers functionality to create a topic, view forum 
+topics, and update or delete an existing topic.
+
+It features validators that check whether the data the user 
+wants to insert, update, or delete complies with established
+business rules.
+
+Additionally, the API includes support for data pagination,
+which allows you to efficiently manage the display of the 
+entire list of topics without exceeding the amount of data
+displayed in a single query.
+
 - ERD Database:
 ![ERD database](images/ForoHubDbERD.png)
 

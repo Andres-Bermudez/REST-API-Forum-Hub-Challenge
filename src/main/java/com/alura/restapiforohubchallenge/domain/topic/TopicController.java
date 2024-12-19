@@ -110,4 +110,11 @@ public class TopicController {
     ) {
         return ResponseEntity.ok(topicService.updateTopic(idTopic, topicReceivedDTO));
     }
+
+    // Eliminar un topico.
+    @DeleteMapping("/delete/{idTopic}")
+    public ResponseEntity deleteTopic(@PathVariable Long idTopic) {
+        topicService.deleteTopic(idTopic);
+        return ResponseEntity.ok().build();
+    }
 }
