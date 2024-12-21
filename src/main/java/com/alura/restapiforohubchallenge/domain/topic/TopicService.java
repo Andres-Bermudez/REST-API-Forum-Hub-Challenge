@@ -9,12 +9,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Pageable;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.alura.restapiforohubchallenge.domain.user.UserEntity;
+import com.alura.restapiforohubchallenge.domain.login.user.UserEntity;
 import com.alura.restapiforohubchallenge.domain.course.CourseEntity;
-import com.alura.restapiforohubchallenge.domain.user.UserRepository;
+import com.alura.restapiforohubchallenge.domain.login.user.UserRepository;
 import com.alura.restapiforohubchallenge.domain.course.CourseRepository;
-import com.alura.restapiforohubchallenge.exceptions.ValidationException;
 import com.alura.restapiforohubchallenge.domain.topic.validations.TopicValidator;
+import com.alura.restapiforohubchallenge.exceptions.exceptions.ValidationException;
 
 @Service
 public class TopicService {
@@ -124,7 +124,7 @@ public class TopicService {
         // Para mostrar al usuario el topico actualizado.
         return new TopicDetailsDTO(
                 topicEntity.getIdTopic(),
-                userEntity.getUserName(),
+                userEntity.getUsername(),
                 topicEntity.getTitle(),
                 courseEntity.getName(),
                 topicEntity.getMessage(),
@@ -152,7 +152,6 @@ public class TopicService {
         if (topicReceivedDTO.message() != null) {
             topicEntity.setMessage(topicReceivedDTO.message());
         }
-
         topicEntity.setLastEditedAt(LocalDateTime.now());
     }
 

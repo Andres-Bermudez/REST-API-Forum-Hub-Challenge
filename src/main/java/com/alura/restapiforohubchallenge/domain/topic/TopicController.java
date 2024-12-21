@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.alura.restapiforohubchallenge.domain.user.UserEntity;
-import com.alura.restapiforohubchallenge.domain.user.UserService;
+import com.alura.restapiforohubchallenge.domain.login.user.UserEntity;
+import com.alura.restapiforohubchallenge.domain.login.user.UserService;
 import com.alura.restapiforohubchallenge.domain.course.CourseEntity;
 import com.alura.restapiforohubchallenge.domain.course.CourseService;
 
@@ -53,7 +53,7 @@ public class TopicController {
         return ResponseEntity.created(url).body(
                 new TopicDetailsDTO(
                         topicEntity.getIdTopic(),
-                        userEntity.getUserName(),
+                        userEntity.getUsername(),
                         topicEntity.getTitle(),
                         courseEntity.getName(),
                         topicEntity.getMessage(),
@@ -79,7 +79,7 @@ public class TopicController {
         return ResponseEntity.ok().body(
                 new TopicDetailsDTO(
                         topicEntity.getIdTopic(),
-                        userEntity.getUserName(),
+                        userEntity.getUsername(),
                         topicEntity.getTitle(),
                         courseEntity.getName(),
                         topicEntity.getMessage(),

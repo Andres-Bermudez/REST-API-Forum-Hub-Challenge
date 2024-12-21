@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.alura.restapiforohubchallenge.domain.topic.TopicRepository;
 import com.alura.restapiforohubchallenge.domain.topic.TopicReceivedDTO;
-import com.alura.restapiforohubchallenge.exceptions.ValidationException;
+import com.alura.restapiforohubchallenge.exceptions.exceptions.ValidationException;
 import com.alura.restapiforohubchallenge.domain.topic.validations.TopicValidator;
 
 @Component

@@ -1,8 +1,8 @@
-package com.alura.restapiforohubchallenge.domain.user;
+package com.alura.restapiforohubchallenge.domain.login.user;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.alura.restapiforohubchallenge.exceptions.ValidationException;
+import com.alura.restapiforohubchallenge.exceptions.exceptions.ValidationException;
 
 @Service
 public class UserService {

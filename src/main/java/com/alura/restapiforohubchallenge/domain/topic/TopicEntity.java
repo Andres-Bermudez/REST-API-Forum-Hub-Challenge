@@ -3,7 +3,7 @@ package com.alura.restapiforohubchallenge.domain.topic;
 import lombok.*;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import com.alura.restapiforohubchallenge.domain.user.UserEntity;
+import com.alura.restapiforohubchallenge.domain.login.user.UserEntity;
 import com.alura.restapiforohubchallenge.domain.course.CourseEntity;
 
 @Entity

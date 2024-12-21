@@ -1,4 +1,4 @@
-package com.alura.restapiforohubchallenge.exceptions;
+package com.alura.restapiforohubchallenge.exceptions.exceptions;
 
 public class ValidationException extends RuntimeException {
 

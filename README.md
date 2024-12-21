@@ -18,6 +18,9 @@ PostgreSQL database and is part of the specialization in
 backend with Java and Spring Framework of the ONE - Oracle
 Next Education program.
 
+- Create new topic:
+![ERD database](images/CreateTopic.png)
+
 The API offers functionality to create a topic, view forum 
 topics, and update or delete an existing topic.
 
@@ -25,10 +28,19 @@ It features validators that check whether the data the user
 wants to insert, update, or delete complies with established
 business rules.
 
+- List of topics:
+![ERD database](images/ListTopics.png)
+
 Additionally, the API includes support for data pagination,
 which allows you to efficiently manage the display of the 
 entire list of topics without exceeding the amount of data
 displayed in a single query.
+
+- Update topic:
+![ERD database](images/UpdateTopic.png)
+
+- Delete a topic:
+![ERD database](images/DeleteTopic.png)
 
 - ERD Database:
 ![ERD database](images/ForoHubDbERD.png)
@@ -49,3 +61,7 @@ displayed in a single query.
 13. Create the new endpoint to update a topic.
 14. Create the new endpoint to show topics.
 15. Add global handling exceptions.
+16. Add Spring Security dependency.
+17. Configure stateless application.
+18. Add JWT dependency.
+19. Generate JWT.

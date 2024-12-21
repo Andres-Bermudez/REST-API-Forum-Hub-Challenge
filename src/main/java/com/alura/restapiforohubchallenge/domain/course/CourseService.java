@@ -1,6 +1,6 @@
 package com.alura.restapiforohubchallenge.domain.course;
 
-import com.alura.restapiforohubchallenge.exceptions.ValidationException;
+import com.alura.restapiforohubchallenge.exceptions.exceptions.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
