@@ -24,7 +24,7 @@ public class TokenService {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.create()
-                    .withIssuer("ForoHubRESTAPI")
+                    .withIssuer("ForumHubRESTAPI")
                     .withSubject(userEntity.getUsername())
                     .withClaim("id", userEntity.getIdUser())
                     .withExpiresAt(generateExpiredDateToken())
@@ -64,7 +64,7 @@ public class TokenService {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             verifier = JWT.require(algorithm)
-                    .withIssuer("ForoHubRESTAPI")
+                    .withIssuer("ForumHubRESTAPI")
                     .build()
                     .verify(tokenReceived);
             verifier.getSubject();

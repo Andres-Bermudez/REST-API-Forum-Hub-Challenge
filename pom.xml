@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.alura</groupId>
-	<artifactId>RESTapiForoHubChallenge</artifactId>
+	<artifactId>RESTapiForumHubChallenge</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>RESTapiForoHubChallenge</name>
+	<name>RESTapiForumHubChallenge</name>
 	<description>
 		This project is a REST API for a forum where participants of a platform can post their questions about
 		certain topics. This API was developed in Java with Spring Boot and a PostgreSQL database and is part
@@ -88,6 +88,12 @@
 			<groupId>com.auth0</groupId>
 			<artifactId>java-jwt</artifactId>
 			<version>4.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.7.0</version>
 		</dependency>
 	</dependencies>
 

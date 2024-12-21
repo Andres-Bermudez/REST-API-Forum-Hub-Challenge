@@ -1,4 +1,4 @@
-# REST API Foro Hub Challenge
+# REST API Forum Hub Challenge
 
 # Index
 - [API Documentation.](#api-documentation)
@@ -8,7 +8,8 @@
 - [Project Monitoring.](#project-monitoring)
 
 ### API Documentation:
-Link:
+- Swagger Documentation:
+![Swagger Documentation](images/SwaggerDocumentation.png)
 
 ### Description:
 This project is a REST API for a forum where participants
@@ -19,7 +20,7 @@ backend with Java and Spring Framework of the ONE - Oracle
 Next Education program.
 
 - Create new topic:
-![ERD database](images/CreateTopic.png)
+![Create new topic](images/CreateTopic.png)
 
 The API offers functionality to create a topic, view forum 
 topics, and update or delete an existing topic.
@@ -29,7 +30,7 @@ wants to insert, update, or delete complies with established
 business rules.
 
 - List of topics:
-![ERD database](images/ListTopics.png)
+![List of topics](images/ListTopics.png)
 
 Additionally, the API includes support for data pagination,
 which allows you to efficiently manage the display of the 
@@ -37,10 +38,37 @@ entire list of topics without exceeding the amount of data
 displayed in a single query.
 
 - Update topic:
-![ERD database](images/UpdateTopic.png)
+![Update topic](images/UpdateTopic.png)
 
 - Delete a topic:
-![ERD database](images/DeleteTopic.png)
+![Delete a topic](images/DeleteTopic.png)
+
+The API uses a PostgreSQL database to manage and
+store all relevant information.
+
+The main components stored in the database are:
+
+- Users: This table contains the data of users
+registered in the system, such as names, emails, encrypted
+passwords, and any other relevant information.
+<br><br>
+- Created Topics: This is where topics or questions created
+by users in the forum are stored. Each topic includes 
+information such as the topic title, the content of the message,
+the user ID who created it, the creation date, and categories
+to facilitate organization and searching.
+<br><br>
+- Courses: This table stores information about the different
+courses offered. Each course has a unique identifier, a title, 
+and a description.
+<br><br>
+- Answers related to each topic: Answers to the topics are stored
+in this table. Each reply contains the content of the message, 
+the ID of the user who responded, the ID of the topic to which 
+the reply is being replied, the date the reply was created, and 
+any additional information that may be necessary for the context 
+of the discussion.
+<br><br>
 
 - ERD Database:
 ![ERD database](images/ForoHubDbERD.png)
@@ -65,3 +93,4 @@ displayed in a single query.
 17. Configure stateless application.
 18. Add JWT dependency.
 19. Generate JWT.
+20. Test authentication and authorization.
