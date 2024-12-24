@@ -42,5 +42,3 @@ CREATE TABLE answers (
     FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE CASCADE,
     FOREIGN KEY (id_topic) REFERENCES topics(id_topic) ON DELETE CASCADE
 );
-
-

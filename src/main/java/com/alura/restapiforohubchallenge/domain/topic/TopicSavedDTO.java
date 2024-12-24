@@ -2,7 +2,7 @@ package com.alura.restapiforohubchallenge.domain.topic;
 
 import java.time.LocalDateTime;
 
-public record TopicDetailsDTO(
+public record TopicSavedDTO(
 
         Long idTopic,
         String user,

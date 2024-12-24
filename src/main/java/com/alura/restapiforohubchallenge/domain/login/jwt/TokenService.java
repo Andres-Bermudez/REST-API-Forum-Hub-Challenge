@@ -47,7 +47,7 @@ public class TokenService {
 
             // Crea un verificador y verifica el token
             JWTVerifier verifier = JWT.require(algorithm).build();
-            verifier.verify(token);  // Si el token es válido, no lanzará ninguna excepción.
+            verifier.verify(token);
             return true;  // El token es válido
 
         } catch (JWTVerificationException e) {

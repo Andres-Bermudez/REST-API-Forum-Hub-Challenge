@@ -1,10 +1,12 @@
 package com.alura.restapiforohubchallenge.domain.topic;
 
 import lombok.*;
+import java.util.List;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import com.alura.restapiforohubchallenge.domain.login.user.UserEntity;
 import com.alura.restapiforohubchallenge.domain.course.CourseEntity;
+import com.alura.restapiforohubchallenge.domain.answer.AnswerEntity;
+import com.alura.restapiforohubchallenge.domain.login.user.UserEntity;
 
 @Entity
 @Table(name = "topics")
@@ -22,11 +24,11 @@ public class TopicEntity {
     private String title;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "course_id")
+    @JoinColumn(name = "id_course")
     private CourseEntity courseEntity;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "id_user")
     private UserEntity userEntity;
 
     private String message;

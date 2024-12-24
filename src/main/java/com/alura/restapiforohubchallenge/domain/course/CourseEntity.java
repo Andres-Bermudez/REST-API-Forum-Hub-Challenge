@@ -1,10 +1,12 @@
 package com.alura.restapiforohubchallenge.domain.course;
 
 import lombok.Getter;
+import java.util.List;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import com.alura.restapiforohubchallenge.domain.topic.TopicEntity;
 
 @Entity
 @Table(name = "courses")
@@ -23,4 +25,7 @@ public class CourseEntity {
 
     @Enumerated(EnumType.STRING)
     private CourseCategory category;
+
+    @OneToMany(mappedBy = "courseEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<TopicEntity> topics;
 }

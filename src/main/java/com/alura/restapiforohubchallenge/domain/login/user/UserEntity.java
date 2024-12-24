@@ -1,5 +1,7 @@
 package com.alura.restapiforohubchallenge.domain.login.user;
 
+import com.alura.restapiforohubchallenge.domain.answer.AnswerEntity;
+import com.alura.restapiforohubchallenge.domain.topic.TopicEntity;
 import lombok.Getter;
 import java.util.List;
 import java.util.Collection;
@@ -33,6 +35,12 @@ public class UserEntity implements UserDetails {
     @Column(name = "active_status")
     private Boolean activeStatus;
 
+    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<TopicEntity> topics;
+
+    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<AnswerEntity> answers;
+
     public UserEntity(Long idUser,
                       String userName,
                       String email,
@@ -46,7 +54,7 @@ public class UserEntity implements UserDetails {
     }
 
 
-    // Para inidcarle a spring los datos de autenticacion.
+    // Para indicarle a spring los datos de autenticacion.
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
