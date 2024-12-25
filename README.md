@@ -9,7 +9,7 @@
 
 ### API Documentation:
 - Swagger Documentation:
-![Swagger Documentation](images/SwaggerDocumentation.png)
+![Swagger Documentation](images/swagger.png)
 
 ### Description:
 This project is a REST API for a forum where participants
@@ -94,3 +94,5 @@ of the discussion.
 18. Add JWT dependency.
 19. Generate JWT.
 20. Test authentication and authorization.
+21. Create answers endpoints.
+22. Test answers methods.

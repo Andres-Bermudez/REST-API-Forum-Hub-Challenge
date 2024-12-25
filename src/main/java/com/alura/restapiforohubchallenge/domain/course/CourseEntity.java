@@ -28,4 +28,11 @@ public class CourseEntity {
 
     @OneToMany(mappedBy = "courseEntity", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TopicEntity> topics;
+
+
+    public CourseEntity(Long idCourse, String name, CourseCategory category) {
+        this.idCourse = idCourse;
+        this.name = name;
+        this.category = category;
+    }
 }

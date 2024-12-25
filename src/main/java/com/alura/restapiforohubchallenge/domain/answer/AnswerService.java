@@ -48,22 +48,22 @@ public class AnswerService {
     // Retorna las respuestas que tiene un topico.
     public List<AnswerSavedDTO> getAnswersByTopicId(Long topicId) {
         if (topicRepository.existsById(topicId) && !topicRepository.getReferenceById(topicId).getActiveStatus()) {
-            throw new jakarta.validation.ValidationException("This topic is not available.");
+            throw new ValidationException("This topic is not available.");
         }
-        return answerRepository.getAnswersByTopicId(topicId)
-                .stream()
-                .map(answer -> new AnswerSavedDTO(
-                        answer.getIdAnswer(),
+        List<AnswerEntity> answers = answerRepository.getAnswersByIdTopic(topicId);
+        return answers.stream()
+            .map(answer -> new AnswerSavedDTO(
+                    answer.getIdAnswer(),
 
-                        // Estas lineas generan 2 subconsultas SQL.
-                        userRepository.getReferenceById(answer.getUserEntity().getIdUser()).getUsername(),
-                        topicRepository.getReferenceById(answer.getTopicEntity().getIdTopic()).getTitle(),
+                    // Estas lineas generan 2 subconsultas SQL.
+                    userRepository.getReferenceById(answer.getUserEntity().getIdUser()).getUsername(),
+                    topicRepository.getReferenceById(answer.getTopicEntity().getIdTopic()).getTitle(),
 
-                        answer.getMessage(),
-                        answer.getCreationDate(),
-                        answer.getLastEditedAt()
-                ))
-                .toList();
+                    answer.getMessage(),
+                    answer.getCreationDate(),
+                    answer.getLastEditedAt()
+            ))
+            .toList();
     }
 
     // Para actualizar una respuesta.

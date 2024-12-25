@@ -14,5 +14,5 @@ public interface AnswerRepository extends JpaRepository<AnswerEntity, Long> {
                    WHERE id_topic = :topicId AND active_status = TRUE
                    ORDER BY id_answer ASC
                    """, nativeQuery = true)
-    List<AnswerEntity> getAnswersByTopicId(Long topicId);
+    List<AnswerEntity> getAnswersByIdTopic(Long topicId);
 }
