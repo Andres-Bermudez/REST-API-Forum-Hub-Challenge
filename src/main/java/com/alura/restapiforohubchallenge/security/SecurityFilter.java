@@ -2,7 +2,7 @@ package com.alura.restapiforohubchallenge.security;
 
 import java.io.IOException;
 
-import com.alura.restapiforohubchallenge.domain.login.jwt.TokenService;
+import com.alura.restapiforohubchallenge.domain.login.jsonwebtoken.TokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import org.springframework.http.HttpStatus;

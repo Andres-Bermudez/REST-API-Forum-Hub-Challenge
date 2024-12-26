@@ -29,7 +29,9 @@ public class SecurityConfiguration {
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests((authorizeHttpRequests) ->
                     authorizeHttpRequests
-                    .requestMatchers(HttpMethod.POST, "/login")
+                    .requestMatchers(HttpMethod.POST,
+                            "/login",
+                            "/user/create")
                     .permitAll()
                         .requestMatchers(
                                 "/v3/api-docs/**",

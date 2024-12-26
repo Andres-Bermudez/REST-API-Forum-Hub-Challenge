@@ -1,4 +1,4 @@
-package com.alura.restapiforohubchallenge.domain.login;
+package com.alura.restapiforohubchallenge.domain.login.authentication;
 
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.alura.restapiforohubchallenge.domain.login.jwt.TokenDTO;
+import com.alura.restapiforohubchallenge.domain.login.jsonwebtoken.TokenDTO;
 import com.alura.restapiforohubchallenge.domain.login.user.UserEntity;
-import com.alura.restapiforohubchallenge.domain.login.jwt.TokenService;
+import com.alura.restapiforohubchallenge.domain.login.jsonwebtoken.TokenService;
 import org.springframework.security.authentication.AuthenticationManager;
 import com.alura.restapiforohubchallenge.domain.login.user.AuthenticationUserDTO;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

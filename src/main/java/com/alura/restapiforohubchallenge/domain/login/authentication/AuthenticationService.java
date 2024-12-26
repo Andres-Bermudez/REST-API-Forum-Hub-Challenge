@@ -1,4 +1,4 @@
-package com.alura.restapiforohubchallenge.domain.login;
+package com.alura.restapiforohubchallenge.domain.login.authentication;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;

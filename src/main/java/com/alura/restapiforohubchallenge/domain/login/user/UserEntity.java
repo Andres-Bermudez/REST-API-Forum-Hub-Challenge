@@ -1,8 +1,6 @@
 package com.alura.restapiforohubchallenge.domain.login.user;
 
-import com.alura.restapiforohubchallenge.domain.answer.AnswerEntity;
-import com.alura.restapiforohubchallenge.domain.topic.TopicEntity;
-import lombok.Getter;
+import lombok.Data;
 import java.util.List;
 import java.util.Collection;
 import jakarta.persistence.*;
@@ -10,11 +8,13 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import com.alura.restapiforohubchallenge.domain.topic.TopicEntity;
+import com.alura.restapiforohubchallenge.domain.answer.AnswerEntity;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 @Entity
 @Table(name = "users")
-@Getter
+@Data
 @EqualsAndHashCode
 @NoArgsConstructor
 public class UserEntity implements UserDetails {
@@ -24,9 +24,10 @@ public class UserEntity implements UserDetails {
     @Column(name = "id_user")
     private Long idUser;
 
-    @Column(name = "user_name")
+    @Column(name = "user_name", unique = true)
     private String userName;
 
+    @Column(unique = true)
     private String email;
 
     @Column(name = "user_password")

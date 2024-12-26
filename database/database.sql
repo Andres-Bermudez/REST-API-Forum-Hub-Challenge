@@ -1,8 +1,8 @@
 CREATE TABLE users (
     id_user BIGSERIAL PRIMARY KEY,
 
-    user_name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    user_name VARCHAR(100) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
     user_password TEXT NOT NULL,
     active_status BOOLEAN DEFAULT TRUE
 );

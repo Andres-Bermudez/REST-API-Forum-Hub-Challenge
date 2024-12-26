@@ -1,4 +1,4 @@
-package com.alura.restapiforohubchallenge.domain.login.jwt;
+package com.alura.restapiforohubchallenge.domain.login.jsonwebtoken;
 
 import com.auth0.jwt.JWT;
 import java.time.Instant;

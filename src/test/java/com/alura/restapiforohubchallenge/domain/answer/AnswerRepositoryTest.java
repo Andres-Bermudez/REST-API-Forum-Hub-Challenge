@@ -52,28 +52,28 @@ class AnswerRepositoryTest {
     @DisplayName("Caso 2: Si un topico SI tiene respuestas creadas y estan activas.")
     void getAnswersByIdTopicTest2() {
         // Arrange.
-        UserEntity userEntity1 =
+        UserEntity userEntity =
                 new UserEntity(
                         null,
                         "userTest",
                         "userTest@email.com",
                         "123456");
-        userRepository.save(userEntity1);
+        userRepository.save(userEntity);
 
-        CourseEntity courseEntity1 =
+        CourseEntity courseEntity =
                 new CourseEntity(
                         null,
                         "courseTest",
                         CourseCategory.PROGRAMMING);
-        courseRepository.save(courseEntity1);
+        courseRepository.save(courseEntity);
 
 
 
         TopicEntity topicEntity1 =
                 new TopicEntity(null,
                         "topicTest1",
-                        courseEntity1,
-                        userEntity1,
+                        courseEntity,
+                        userEntity,
                         "topic message test 1",
                         LocalDateTime.now(),
                         LocalDateTime.now(),
@@ -84,8 +84,8 @@ class AnswerRepositoryTest {
                 new TopicEntity(
                         null,
                         "topicTest2",
-                        courseEntity1,
-                        userEntity1,
+                        courseEntity,
+                        userEntity,
                         "topic message test 2",
                         LocalDateTime.now(),
                         LocalDateTime.now(),
@@ -96,8 +96,8 @@ class AnswerRepositoryTest {
                 new TopicEntity(
                         null,
                         "topicTest3",
-                        courseEntity1,
-                        userEntity1,
+                        courseEntity,
+                        userEntity,
                         "topic message test 3",
                         LocalDateTime.now(),
                         LocalDateTime.now(),
@@ -115,7 +115,7 @@ class AnswerRepositoryTest {
         AnswerEntity answerEntity1 =
                 new AnswerEntity(
                         null,
-                        userEntity1,
+                        userEntity,
                         topicEntity1,    // Esta respuesta es del topico 1.
                         "answer message test 1",
                         LocalDateTime.now(),
@@ -126,7 +126,7 @@ class AnswerRepositoryTest {
         AnswerEntity answerEntity2 =
                 new AnswerEntity(
                         null,
-                        userEntity1,
+                        userEntity,
                         topicEntity1,    // Esta respuesta es del topico 1.
                         "answer message test 2",
                         LocalDateTime.now(),
@@ -137,8 +137,8 @@ class AnswerRepositoryTest {
         AnswerEntity answerEntity3 =
                 new AnswerEntity(
                         null,
-                        userEntity1,
-                        topicEntity3,
+                        userEntity,
+                        topicEntity3,    // Esta respuesta es del topico 3.
                         "answer message test 3",
                         LocalDateTime.now(),
                         LocalDateTime.now(),

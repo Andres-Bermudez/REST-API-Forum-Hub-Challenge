@@ -1,11 +1,9 @@
 package com.alura.restapiforohubchallenge.domain.topic;
 
 import lombok.*;
-import java.util.List;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import com.alura.restapiforohubchallenge.domain.course.CourseEntity;
-import com.alura.restapiforohubchallenge.domain.answer.AnswerEntity;
 import com.alura.restapiforohubchallenge.domain.login.user.UserEntity;
 
 @Entity
